@@ -1,0 +1,390 @@
+/* =========================================================
+   GENERAL LAYOUT & BASE STYLES for ADMIN
+   ========================================================= */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+
+  /*  REAL pink background */
+  background: linear-gradient(180deg, #ffe3f2 0%, #ffb6df 55%, #ffd1ea 100%);
+  color: #2a1530;
+}
+
+/* =========================================================
+   HERO SECTION
+   ========================================================= */
+.hero {
+  background: url("../img/banner.png") no-repeat center center/cover;
+  height: 20vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.hero .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(60, 5, 61, 0.64);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero .logo {
+  width: 100px;
+  border-radius: 10px;
+  margin-bottom: 16px;
+}
+
+.hero h1 {
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+}
+
+/* =========================================================
+   ADMIN DASHBOARD LAYOUT
+   ========================================================= */
+.admin-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
+.sidebar {
+  width: 250px;
+
+  /*  pink sidebar */
+  background: linear-gradient(180deg, #ff4fa3 0%, #ff7ac4 100%);
+  color: #fff;
+
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+
+  box-shadow: 6px 0 24px rgba(135, 26, 64, 0.704);
+}
+
+.sidebar.collapsed {
+  width: 60px;
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+
+  /* slightly darker pink */
+  background: rgba(185, 74, 119, 0.789);
+}
+
+.sidebar h2 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.toggle-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+/* Sidebar Menu Items */
+.menu {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-item,
+.submenu-toggle {
+  color: #fff;
+  padding: 0.9rem 1rem;
+  text-decoration: none;
+  display: block;
+  border: none;
+  background: none;
+  text-align: left;
+  font-size: 1rem;
+  cursor: pointer;
+
+  transition: background 0.25s, transform 0.2s;
+}
+
+.menu-item:hover,
+.submenu-toggle:hover {
+  background-color: rgba(253, 107, 107, 0.22);
+  color: #ffffff;
+  transform: translateX(2px);
+}
+
+.menu-item.active {
+  background-color: rgba(145, 46, 69, 0.35);
+  color: #fff;
+  font-weight: bold;
+}
+
+/* Submenu */
+.submenu-content {
+  display: none;
+  flex-direction: column;
+
+  /* lighter pink submenu */
+  background-color: rgba(246, 121, 185, 0.485);
+}
+
+.submenu-content a {
+  color: #ffffff;
+  padding: 0.75rem 2rem;
+  text-decoration: none;
+  transition: background 0.25s;
+}
+
+.submenu-content a:hover {
+  background-color: rgba(255, 141, 183, 0.22);
+}
+
+.submenu-content.show {
+  display: flex;
+}
+
+/* =========================================================
+   MAIN CONTENT AREA
+   ========================================================= */
+.main-content {
+  margin-top: 0;
+  flex: 1;
+  padding: 1.2rem;
+
+  /* make main area white-ish */
+  background: transparent;
+}
+
+.main-content h2 {
+  color: #ff2f8d;
+}
+
+/* =========================================================
+   FORM STYLES
+   ========================================================= */
+main {
+  max-width: 90%;
+  margin: 2rem auto;
+
+  /* glass white card */
+  background: rgba(255,255,255,0.85);
+  padding: 1.2rem;
+  border-radius: 16px;
+
+  border: 1px solid rgba(255, 79, 163, 0.35);
+  box-shadow: 0 12px 28px rgba(247, 149, 149, 0.136);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+
+  
+  color: #ff2f8d;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+label {
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+  color: #2a1530;
+}
+
+input[type="text"],
+input[type="date"],
+select,
+textarea {
+  width: 100%;
+  padding: 0.75rem;
+
+  border: 1px solid rgba(255,79,163,0.35);
+  border-radius: 10px;
+  font-size: 1rem;
+  box-sizing: border-box;
+
+  background: rgba(255,255,255,0.95);
+  color: #2a1530;
+}
+
+textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+input[type="file"] {
+  border: 1px solid rgba(255,79,163,0.35);
+  padding: 0.6rem;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.95);
+  color: #2a1530;
+}
+
+button {
+  padding: 0.85rem;
+  background: linear-gradient(135deg, #ff4fa3 0%, #ff7ac4 100%);
+  color: #ffffff;
+
+  font-size: 1rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+
+  transition: transform 0.2s, filter 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.05);
+  box-shadow: 0 10px 22px rgba(255,79,163,0.35);
+}
+
+/* =========================================================
+   TABLE STYLES
+   ========================================================= */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+
+  background: rgba(255,255,255,0.85);
+  border: 1px solid rgba(255, 79, 163, 0.25);
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+th, td {
+  border: 1px solid rgba(255, 79, 163, 0.20);
+  padding: 0.75rem;
+  text-align: left;
+  color: #2a1530;
+}
+
+th {
+  /* ✅ correct gradient in th */
+  background: linear-gradient(135deg, #ff4fa3 0%, #ff7ac4 100%);
+  color: #ffffff;
+}
+
+tr:nth-child(even) {
+  background-color: rgba(255, 79, 164, 0.442);
+}
+
+tr:hover {
+  background-color: rgba(250, 79, 162, 0.481);
+}
+
+img {
+  max-width: 100px;
+  border-radius: 8px;
+}
+
+/* Table Action Buttons */
+a.action-btn {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-right: 6px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 0.85rem;
+  transition: transform 0.15s, filter 0.15s;
+}
+
+a.action-btn:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+}
+
+a.edit {
+  background: linear-gradient(135deg, #ff4fa3 0%, #ff7ac4 100%);
+}
+
+a.delete {
+  background: #ef4444;
+}
+
+/* =========================================================
+   RESPONSIVE DESIGN
+   ========================================================= */
+@media (max-width: 768px) {
+  .admin-container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+  }
+
+  .sidebar.collapsed {
+    height: 50px;
+  }
+
+  .main-content {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 700px) {
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+
+  thead {
+    display: none;
+  }
+
+  tr {
+    margin-bottom: 1rem;
+    border: 1px solid rgba(255, 79, 163, 0.30);
+    border-radius: 12px;
+    padding: 0.5rem;
+  }
+
+  td {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+  }
+
+  td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    color: #ff2f8d;
+  }
+}
+
+@media (max-width: 600px) {
+  main {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+}
